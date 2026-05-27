@@ -38,6 +38,6 @@ jobs:
     - name: Build and Push Docker Image
       run: |
         cd MLProject_Folder
-        # Ini perintah MLflow untuk build dan push ke Docker Hub
+        # Gunakan nama image yang konsisten
         mlflow models build-docker -m . --name ${{ secrets.DOCKERHUB_USERNAME }}/ml-model:latest
         docker push ${{ secrets.DOCKERHUB_USERNAME }}/ml-model:latest
