@@ -4,11 +4,12 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:
 
 jobs:
   integration:
     runs-on: ubuntu-latest
+    env:
+      ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
     
     steps:
     - name: Checkout Repository
@@ -21,11 +22,22 @@ jobs:
 
     - name: Install Dependencies
       run: |
-        python -m pip install --upgrade pip
-        pip install pandas numpy scikit-learn mlflow dagshub matplotlib seaborn
+        pip install mlflow scikit-learn pandas numpy
 
-    - name: Run MLproject Verification
+    - name: Run Verification
       run: |
         cd MLProject_Folder
-        # Menjalankan script secara langsung untuk melihat eror sebenarnya
         python modelling.py
+
+    - name: Login to Docker Hub
+      uses: docker/login-action@v3
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+    - name: Build and Push Docker Image
+      run: |
+        cd MLProject_Folder
+        # Ini perintah MLflow untuk build dan push ke Docker Hub
+        mlflow models build-docker -m . --name ${{ secrets.DOCKERHUB_USERNAME }}/ml-model:latest
+        docker push ${{ secrets.DOCKERHUB_USERNAME }}/ml-model:latest
