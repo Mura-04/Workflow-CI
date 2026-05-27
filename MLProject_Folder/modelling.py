@@ -1,3 +1,3 @@
 import os
 base_dir = os.path.dirname(os.path.abspath(__file__))
-data_path = os.path.join(base_dir, "heart_preprocessing.csv"
+data_path = os.path.join(base_dir, "heart_preprocessing.csv")
