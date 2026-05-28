@@ -1,4 +1,4 @@
-artifact_path: file:///C:/SMSML_Muhammad Akmal/Workflow-CI/mlruns/0/models/m-6c542b4a377c418098f2ec45e7db2b90/artifacts
+artifact_path: file:///C:/SMSML_Muhammad Akmal/Workflow-CI/MLProject_Folder/mlruns/0/models/m-2fc08eec4fb346dfa876788483eec4d5/artifacts
 flavors:
   python_function:
     env:
@@ -15,9 +15,9 @@ flavors:
     sklearn_version: 1.7.2
     skops_trusted_types: null
 mlflow_version: 3.12.0
-model_id: m-6c542b4a377c418098f2ec45e7db2b90
-model_size_bytes: 856963
-model_uuid: m-6c542b4a377c418098f2ec45e7db2b90
+model_id: m-2fc08eec4fb346dfa876788483eec4d5
+model_size_bytes: 364840
+model_uuid: m-2fc08eec4fb346dfa876788483eec4d5
 prompts: null
-run_id: fa424c60c2a540a38f84ee156b7cdd56
-utc_time_created: '2026-05-27 09:24:32.668522'
+run_id: 60b0f6f94c4b438bbeadedabe9688237
+utc_time_created: '2026-05-28 06:47:45.376295'

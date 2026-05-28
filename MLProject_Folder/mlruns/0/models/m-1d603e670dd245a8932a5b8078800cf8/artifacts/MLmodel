@@ -1,0 +1,23 @@
+artifact_path: file:///C:/SMSML_Muhammad Akmal/Workflow-CI/MLProject_Folder/mlruns/0/models/m-1d603e670dd245a8932a5b8078800cf8/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.10.9
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.7.2
+    skops_trusted_types: null
+mlflow_version: 3.12.0
+model_id: m-1d603e670dd245a8932a5b8078800cf8
+model_size_bytes: 364840
+model_uuid: m-1d603e670dd245a8932a5b8078800cf8
+prompts: null
+run_id: ed381f621e3b4cb0a84454560eb18999
+utc_time_created: '2026-05-28 06:53:08.581621'
