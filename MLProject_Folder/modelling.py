@@ -37,10 +37,7 @@ def main():
 
     # 5. Log ke MLflow
     with mlflow.start_run():
-        mlflow.sklearn.log_model(
-            sk_model=model, 
-            artifact_path="MLmodel"
-        )
+        mlflow.sklearn.log_model(sk_model=model, artifact_path="model", registered_model_name="HeartDiseaseModel")
         mlflow.log_metric("accuracy", acc)
         print("[√] Model berhasil di-log ke MLflow!")
 
